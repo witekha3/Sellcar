@@ -14,8 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
+import java.util.Calendar;
 
 public class InformationsStage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -72,7 +71,7 @@ public class InformationsStage extends AppCompatActivity implements AdapterView.
                     return;
                 }
 
-                if(carYear.length()<4){
+                if(carYear.length()<4 || Integer.valueOf(carYear)<1800 || Integer.valueOf(carYear)>Calendar.getInstance().get(Calendar.YEAR)){
                     comunicat.setTextColor(Color.RED);
                     comunicat.setText("Zła data");
                     return;

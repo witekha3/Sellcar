@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jul 15 04:20:45 CEST 2019
+#Mon Jul 15 19:11:25 CEST 2019
 0.baseType=DIRECTORY
 0.base=E\:\\studia Witek\\Testy\\prog_wlas\\CarSell\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 0.path=classes.dex

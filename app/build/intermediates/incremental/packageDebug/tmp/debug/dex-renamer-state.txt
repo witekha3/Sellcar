@@ -1,4 +1,4 @@
-#Mon Jul 15 12:40:44 CEST 2019
+#Mon Jul 15 19:11:24 CEST 2019
 base.0=E\:\\studia Witek\\Testy\\prog_wlas\\CarSell\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex

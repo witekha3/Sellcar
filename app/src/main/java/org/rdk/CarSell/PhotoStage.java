@@ -20,6 +20,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PhotoStage extends AppCompatActivity implements View.OnClickListener {
 
@@ -90,15 +92,17 @@ public class PhotoStage extends AppCompatActivity implements View.OnClickListene
         lastBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                isReadStoragePermissionGranted();
-                isWriteStoragePermissionGranted();
+                if(!isReadStoragePermissionGranted() && !isWriteStoragePermissionGranted()){
+                    textView.setTextColor(Color.RED);
+                    textView.setText("Pamiętaj że zdjecia muszą być różne!");
+                    return;
+                }
 
                 if(finalFile1==null || finalFile2==null || finalFile3==null ||finalFile4==null
-                        || sameFiles(finalFile1.toString(), finalFile2.toString(), finalFile3.toString(), finalFile4.toString())==true){
+                        || containDuplicates(finalFile1.toString(), finalFile2.toString(), finalFile3.toString(), finalFile4.toString())){
 
                     textView.setTextColor(Color.RED);
-                    textView.setText("Proszę dodać cztery zdjęcia \nPamiętaj że zdjecia muszą być różne! ");
+                    textView.setText("Proszę dodać cztery zdjęcia" );
                     return;
                 }
 
@@ -109,8 +113,8 @@ public class PhotoStage extends AppCompatActivity implements View.OnClickListene
                     public void run() {
                         try {
                             GMailSender sender = new GMailSender(
-                                    "xx@gmail.com",
-                                    "xx");
+                                    "konradskupaut@gmail.com",
+                                    "xxx");
                             sender.sendMail(
                                     "Samochód na sprzedaż",
                                     "Imię: "+ name +"\nNumer telefonu: "+number+
@@ -124,6 +128,8 @@ public class PhotoStage extends AppCompatActivity implements View.OnClickListene
                         }
                     }
                 }).start();
+               // progressBar.setVisibility(View.GONE);
+
                 Intent lastStage = new Intent(getApplicationContext(), LastStage.class);
                 startActivity(lastStage);
             }
@@ -204,7 +210,6 @@ public class PhotoStage extends AppCompatActivity implements View.OnClickListene
                     == PackageManager.PERMISSION_GRANTED) {
                 return true;
             } else {
-
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 3);
                 return false;
             }
@@ -230,18 +235,16 @@ public class PhotoStage extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-    public boolean sameFiles(String val1, String val2, String val3, String val4) {
-        String[] values = {val1, val2, val3, val4};
+    public boolean containDuplicates(String val1, String val2, String val3, String val4) {
 
-        Boolean x=false;
-        for(int i=0; i<values.length; i++) {
-            for (int j=i+1; j < values.length - 1; j++) {
-                if (values[i] == values[j]) {
-                    x = true;
-                }
+        ArrayList<String> files = new ArrayList<>(Arrays.asList(val1, val2, val3, val4));
+        ArrayList<String> newList = new ArrayList<String>();
+        for(String i : files){
+            if(newList.contains(i)){
+                return true;
             }
+            newList.add(i);
         }
-        return x;
+        return false;
     }
-
 }
