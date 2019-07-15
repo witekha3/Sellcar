@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">Sprzedaj Samochód!</string>
+    <string name="numer_telefonu">Numer Telefonu</string>
+    <string name="imie">Imie</string>
+    <string name="button">Button</string>
+    <string name="dalej">Dalej</string>
+    <string name="facebook">Facebook</string>
+    <string name="title_activity_information_stage">InformationStage</string>
+    <string name="model">Model</string>
+    <string name="rok">Rok</string>
+    <string name="uszkodzony">Uszkodzony?</string>
+    <string name="napisz_co_o_samochodzie">Napisz coś o samochodzie</string>
+    <string name="prosz_doda_cztery_zdj_cia_samochodu">Proszę dodać cztery zdjęcia samochodu</string>
+    <string name="wy_lij_informacje">Wyślij informacje!</string>
+    <string name="todo">TODO</string>
+    <string name="dzi_kujemy_nodezwiemy_si_w_ci_gu_48h_ndo_us_yszenia">Dziękujemy!  Odezwiemy się w ciągu 48h. Do usłyszenia!</string>
+
+
+    <string-array name="carsBrands">
+        <item>Acura</item>
+        <item>Alfa Romeo</item>
+        <item>Audi</item>
+        <item>BMW</item>
+        <item>Bentley</item>
+        <item>Buick</item>
+        <item>Cadillac</item>
+        <item>Chevrolet</item>
+        <item>Chrysler</item>
+        <item>Dodge</item>
+        <item>Fiat</item>
+        <item>Ford</item>
+        <item>GMC</item>
+        <item>Genesis</item>
+        <item>Honda</item>
+        <item>Hyundai</item>
+        <item>Infiniti</item>
+        <item>Jaguar</item>
+        <item>Jeep</item>
+        <item>Kia</item>
+        <item>Land Rover</item>
+        <item>Lexus</item>
+        <item>Lincoln</item>
+        <item>Lotus</item>
+        <item>Maserati</item>
+        <item>Mazda</item>
+        <item>Mercedes-Benz</item>
+        <item>Mercury</item>
+        <item>Mini</item>
+        <item>Mitsubishi</item>
+        <item>Nissan</item>
+        <item>Polestar</item>
+        <item>Pontiac</item>
+        <item>Porsche</item>
+        <item>Ram</item>
+        <item>Rolls-Royc</item>e
+        <item>Saab</item>
+        <item>Saturn</item>
+        <item>Scion</item>
+        <item>Skoda</item>
+        <item>Smart</item>
+        <item>Subaru</item>
+        <item>Suzuki</item>
+        <item>Tesla</item>
+        <item>Toyota</item>
+        <item>Volkswagen</item>
+        <item>Volvo</item>
+    </string-array>
+
+</resources>
